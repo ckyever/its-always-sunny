@@ -91,11 +91,6 @@ export const generateWeatherDisplay = (weather) => {
   weatherSummary.appendChild(temperatureRange);
 
   firstRow.appendChild(weatherSummary);
-
-  const weatherGif = document.createElement("img");
-  weatherGif.classList = "weather-gif";
-  firstRow.appendChild(weatherGif);
-
   weatherContainer.appendChild(firstRow);
 
   return weatherContainer;
