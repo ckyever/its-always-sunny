@@ -7,9 +7,13 @@ class WeatherApi {
 
   #currentWeather;
 
+  constructor() {
+    this.#currentWeather = new Weather({});
+  }
+
   createWeather(data) {
     return new Weather({
-      location: data.address,
+      location: data.resolvedAddress,
       weatherDescription: data.description,
       conditions: data.currentConditions.conditions,
       currentTemperature: data.currentConditions.temp,
@@ -26,14 +30,17 @@ class WeatherApi {
     try {
       const response = await fetch(WeatherApi.endpointTemplate(location));
       const data = await response.json();
-      console.log(data);
       this.#currentWeather = this.createWeather(data);
-      console.log(this.#currentWeather);
       success = true;
     } catch {
       success = false;
     }
     return success;
+  }
+
+  displayWeather() {
+    // CKYTODO: Temporarily display to console
+    console.log(this.#currentWeather);
   }
 }
 

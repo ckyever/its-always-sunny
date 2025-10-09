@@ -19,7 +19,7 @@ export class Weather {
     minTemperature = null,
     precipitationAmount = null,
     precipitationProbability = null,
-  }) {
+  } = {}) {
     this.#location = location;
     this.#weatherDescription = weatherDescription;
     this.#conditions = conditions;
