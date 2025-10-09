@@ -106,6 +106,13 @@ h6 {
   width: 600px;
 }
 
+.weather-container .row {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
 .weather-container .location {
   grid-column: span 2;
   text-align: center;
@@ -134,4 +141,9 @@ h6 {
 
 .weather-summary .current-temperature {
   font-size: 3rem;
+}
+
+.weather-gif {
+  max-height: 225px;
+  max-width: 225px;
 }

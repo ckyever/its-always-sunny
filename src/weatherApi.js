@@ -45,6 +45,10 @@ class WeatherApi {
   displayWeather() {
     return generateWeatherDisplay(this.#currentWeather);
   }
+
+  get weatherConditions() {
+    return this.#currentWeather.conditions;
+  }
 }
 
 export default new WeatherApi();
