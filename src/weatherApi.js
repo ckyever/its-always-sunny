@@ -1,5 +1,5 @@
 import { Weather } from "./Weather.js";
-import { generateWeatherDisplay } from "./WeatherDisplay.js";
+import { generateWeatherDisplay } from "./weatherDisplay.js";
 
 class WeatherApi {
   static visualCrossingApiKey = "PMM3RB9EUK4F9UD89KCKVKN4W";

@@ -1,5 +1,5 @@
 import "./styles.css";
-import weatherApi from "./WeatherApi.js";
+import weatherApi from "./weatherApi.js";
 
 const searchForm = document.querySelector("form.search");
 const queryInput = document.querySelector("form.search > input.query");
