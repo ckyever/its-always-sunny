@@ -76,17 +76,17 @@ export const generateWeatherDisplay = (weather) => {
 
   const currentTemperature = document.createElement("span");
   currentTemperature.classList = "current-temperature";
-  currentTemperature.textContent = `${weather.currentTemperature}°`;
+  currentTemperature.textContent = `${Math.floor(weather.currentTemperature)}°`;
   weatherSummary.appendChild(currentTemperature);
 
   const feelsLikeTemperature = document.createElement("span");
   feelsLikeTemperature.classList = "feels-like-temperature";
-  feelsLikeTemperature.textContent = `Feels like ${weather.feelsLikeTemperature}°`;
+  feelsLikeTemperature.textContent = `Feels like ${Math.floor(weather.feelsLikeTemperature)}°`;
   weatherSummary.appendChild(feelsLikeTemperature);
 
   const temperatureRange = document.createElement("span");
   temperatureRange.classList = "temperature-range";
-  temperatureRange.textContent = `High ${weather.maxTemperature}° - Low ${weather.minTemperature}`;
+  temperatureRange.textContent = `High ${Math.floor(weather.maxTemperature)}° - Low ${Math.floor(weather.minTemperature)}°`;
   weatherSummary.appendChild(temperatureRange);
 
   firstRow.appendChild(weatherSummary);
