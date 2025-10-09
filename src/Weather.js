@@ -8,6 +8,7 @@ export class Weather {
   #minTemperature;
   #precipitationAmount;
   #precipitationProbability;
+  #icon;
 
   constructor({
     location = null,
@@ -19,6 +20,7 @@ export class Weather {
     minTemperature = null,
     precipitationAmount = null,
     precipitationProbability = null,
+    icon = null,
   } = {}) {
     this.#location = location;
     this.#weatherDescription = weatherDescription;
@@ -29,6 +31,7 @@ export class Weather {
     this.#minTemperature = minTemperature;
     this.#precipitationAmount = precipitationAmount;
     this.#precipitationProbability = precipitationProbability;
+    this.#icon = icon;
   }
 
   get location() {
@@ -65,5 +68,9 @@ export class Weather {
 
   get precipitationProbability() {
     return this.#precipitationProbability;
+  }
+
+  get icon() {
+    return this.#icon;
   }
 }

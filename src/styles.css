@@ -121,6 +121,12 @@ h6 {
   gap: 8px;
 }
 
+.current-conditions {
+  display: flex;
+  align-items: center;
+  margin-bottom: -16px;
+}
+
 .weather-summary .current-temperature {
   font-size: 3rem;
 }

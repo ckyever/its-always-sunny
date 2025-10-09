@@ -23,6 +23,7 @@ class WeatherApi {
       minTemperature: data.days[0].tempmin,
       precipitationAmount: data.days[0].precip,
       precipitationProbability: data.days[0].precipprob,
+      icon: data.currentConditions.icon,
     });
   }
 
