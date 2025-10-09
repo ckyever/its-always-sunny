@@ -1,3 +1,5 @@
+import { titleCase } from "./utility.js";
+
 export const generateWeatherDisplay = (weather) => {
   const weatherContainer = document.createElement("div");
   weatherContainer.classList = "weather-container";
@@ -7,7 +9,7 @@ export const generateWeatherDisplay = (weather) => {
 
   const location = document.createElement("h2");
   location.classList = "location";
-  location.textContent = weather.location;
+  location.textContent = titleCase(weather.location);
   weatherSummary.appendChild(location);
 
   const currentConditions = document.createElement("div");
