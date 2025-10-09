@@ -4,13 +4,16 @@ export const generateWeatherDisplay = (weather) => {
   const weatherContainer = document.createElement("div");
   weatherContainer.classList = "weather-container";
 
-  const weatherSummary = document.createElement("div");
-  weatherSummary.classList = "weather-summary";
-
   const location = document.createElement("h2");
   location.classList = "location";
   location.textContent = titleCase(weather.location);
-  weatherSummary.appendChild(location);
+  weatherContainer.appendChild(location);
+
+  const firstRow = document.createElement("div");
+  firstRow.classList = "row";
+
+  const weatherSummary = document.createElement("div");
+  weatherSummary.classList = "weather-summary";
 
   const currentConditions = document.createElement("div");
   currentConditions.classList = "current-conditions";
@@ -35,7 +38,8 @@ export const generateWeatherDisplay = (weather) => {
   temperatureRange.textContent = `High ${weather.maxTemperature}° - Low ${weather.minTemperature}`;
   weatherSummary.appendChild(temperatureRange);
 
-  weatherContainer.appendChild(weatherSummary);
+  firstRow.appendChild(weatherSummary);
+  weatherContainer.appendChild(firstRow);
 
   return weatherContainer;
 };

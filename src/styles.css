@@ -77,9 +77,50 @@ h6 {
 }
 /* End of CSS Reset */
 
-div.weather-summary {
+.container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.query {
+  margin: 16px;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 16px;
+  box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
+  font-size: 1.5rem;
+}
+
+.query:focus {
+  outline: none;
+}
+
+.weather-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border: 2px solid black;
+  padding: 20px;
+  width: 600px;
+}
+
+.weather-container .location {
+  grid-column: span 2;
+  text-align: center;
+}
+
+.weather-summary {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  border: 2px solid black;
+  gap: 8px;
+}
+
+.weather-summary .current-temperature {
+  font-size: 3rem;
 }

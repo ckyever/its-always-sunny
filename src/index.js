@@ -3,7 +3,7 @@ import weatherApi from "./weatherApi.js";
 
 const searchForm = document.querySelector("form.search");
 const queryInput = document.querySelector("form.search > input.query");
-const contentContainer = document.querySelector("body > div.content");
+const contentContainer = document.querySelector("body div.content");
 
 // Default weather shown
 search("Everest, Nepal");
