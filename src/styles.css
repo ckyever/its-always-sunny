@@ -125,6 +125,11 @@ h6 {
   display: flex;
   align-items: center;
   margin-bottom: -16px;
+  gap: 8px;
+}
+
+.current-conditions .weather-icon {
+  width: 80px;
 }
 
 .weather-summary .current-temperature {

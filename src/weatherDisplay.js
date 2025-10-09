@@ -27,7 +27,7 @@ function getIcon(iconType) {
     case "wind":
       icon = windIcon;
       break;
-    case "cloud":
+    case "cloudy":
       icon = cloudyIcon;
       break;
     case "partly-cloudy-day":
@@ -67,6 +67,7 @@ export const generateWeatherDisplay = (weather) => {
   currentConditions.classList = "current-conditions";
   const currentConditionsIcon = document.createElement("img");
   currentConditionsIcon.src = getIcon(weather.icon);
+  currentConditionsIcon.classList = "weather-icon";
   currentConditions.appendChild(currentConditionsIcon);
   const currentConditionsText = document.createElement("span");
   currentConditionsText.classList = "text";
