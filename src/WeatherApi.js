@@ -1,4 +1,5 @@
 import { Weather } from "./Weather.js";
+import { generateWeatherDisplay } from "./WeatherDisplay.js";
 
 class WeatherApi {
   static visualCrossingApiKey = "PMM3RB9EUK4F9UD89KCKVKN4W";
@@ -30,7 +31,9 @@ class WeatherApi {
     try {
       const response = await fetch(WeatherApi.endpointTemplate(location));
       const data = await response.json();
+      console.log(data); // CKYTODO Remove after development
       this.#currentWeather = this.createWeather(data);
+      console.log(this.#currentWeather); // CKYTODO Remove after development
       success = true;
     } catch {
       success = false;
@@ -39,8 +42,7 @@ class WeatherApi {
   }
 
   displayWeather() {
-    // CKYTODO: Temporarily display to console
-    console.log(this.#currentWeather);
+    return generateWeatherDisplay(this.#currentWeather);
   }
 }
 
