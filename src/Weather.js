@@ -113,6 +113,9 @@ export class Weather {
   get uvIndex() {
     return this.#uvIndex;
   }
+  get hourly() {
+    return this.#hourly;
+  }
 }
 
 export class HourlyWeather {
