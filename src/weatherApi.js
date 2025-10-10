@@ -19,7 +19,7 @@ class WeatherApi {
     let currentDayIndex = 0;
 
     let hourlyWeather = [];
-    for (let i = 0; i <= NUMBER_OF_HOURS_TO_SHOW; i++) {
+    for (let i = 0; i < NUMBER_OF_HOURS_TO_SHOW; i++) {
       // We reached midnight so go to the next day
       if (currentHour > HOURS_IN_A_DAY - 1) {
         currentDayIndex++;

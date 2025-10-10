@@ -157,6 +157,8 @@ body {
 }
 
 .current-data {
+  width: 100%;
+  margin-left: 15%;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-items: start;
@@ -189,7 +191,7 @@ body {
 .hourly-container {
   display: flex;
   justify-content: space-around;
-  gap: 24px;
+  gap: 16px;
 }
 
 .hourly-data {
@@ -197,6 +199,10 @@ body {
   flex-direction: column;
   align-items: center;
   gap: 4px;
+  background-color: rgba(0, 0, 0, 0.04);
+  width: 100px;
+  padding: 12px;
+  border-radius: 20px;
 }
 
 .hourly-data .temperature {
