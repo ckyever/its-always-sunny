@@ -2,7 +2,14 @@ import { titleCase } from "./utility.js";
 
 // Weather icons
 import snowIcon from "./assets/snow.svg";
+import snowShowersDayIcon from "./assets/snow-showers-day.svg";
+import snowShowersNightIcon from "./assets/snow-showers-night.svg";
+import thunderRainIcon from "./assets/thunder-rain.svg";
+import thunderShowersDayIcon from "./assets/thunder-showers-day.svg";
+import thunderShowersNightIcon from "./assets/thunder-showers-night.svg";
 import rainIcon from "./assets/rain.svg";
+import showersDayIcon from "./assets/showers-day.svg";
+import showersNightIcon from "./assets/showers-night.svg";
 import fogIcon from "./assets/fog.svg";
 import windIcon from "./assets/wind.svg";
 import cloudyIcon from "./assets/cloudy.svg";
@@ -10,6 +17,7 @@ import partlyCloudyIcon from "./assets/partly-cloudy-day.svg";
 import partlyCloudyNightIcon from "./assets/partly-cloudy-night.svg";
 import clearDayIcon from "./assets/clear-day.svg";
 import clearNightIcon from "./assets/clear-night.svg";
+import notAvailableIcon from "./assets/not-available.svg";
 
 function getIcon(iconType) {
   let icon;
@@ -18,8 +26,29 @@ function getIcon(iconType) {
     case "snow":
       icon = snowIcon;
       break;
+    case "snow-showers-day":
+      icon = snowShowersDayIcon;
+      break;
+    case "snow-showers-night":
+      icon = snowShowersNightIcon;
+      break;
+    case "thunder-rain":
+      icon = thunderRainIcon;
+      break;
+    case "thunder-showers-day":
+      icon = thunderShowersDayIcon;
+      break;
+    case "thunder-showers-night":
+      icon = thunderShowersNightIcon;
+      break;
     case "rain":
       icon = rainIcon;
+      break;
+    case "showers-day":
+      icon = showersDayIcon;
+      break;
+    case "showers-night":
+      icon = showersNightIcon;
       break;
     case "fog":
       icon = fogIcon;
@@ -43,7 +72,7 @@ function getIcon(iconType) {
       icon = clearNightIcon;
       break;
     default:
-      icon = clearDayIcon;
+      icon = notAvailableIcon;
   }
   return icon;
 }

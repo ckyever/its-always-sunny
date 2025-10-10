@@ -4,7 +4,7 @@ import { generateWeatherDisplay } from "./weatherDisplay.js";
 class WeatherApi {
   static visualCrossingApiKey = "PMM3RB9EUK4F9UD89KCKVKN4W";
   static endpointTemplate = (location) =>
-    `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}/today?unitGroup=metric&key=${WeatherApi.visualCrossingApiKey}&contentType=json`;
+    `https://weather.visualcrossing.com/VisualCrossingWebServices/rest/services/timeline/${location}/today?unitGroup=metric&iconSet=icons2&key=${WeatherApi.visualCrossingApiKey}&contentType=json`;
 
   #currentWeather;
 
