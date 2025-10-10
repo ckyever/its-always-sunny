@@ -85,12 +85,17 @@ function getIcon(iconType) {
   return icon;
 }
 
-function createConditionsDataElement(icon, label, value) {
+function createConditionsDataElement(icon, label, value, rotate) {
   const conditionsData = document.createElement("div");
   conditionsData.classList = "data-container";
   const conditionsDataImage = document.createElement("img");
   conditionsDataImage.classList = "icon";
   conditionsDataImage.src = icon;
+
+  if (rotate !== null) {
+    conditionsDataImage.style.transform = `rotate(${rotate}deg)`;
+  }
+
   conditionsData.appendChild(conditionsDataImage);
   const conditionsDataText = document.createElement("div");
   conditionsDataText.classList = "data-text";
@@ -198,6 +203,7 @@ export const generateWeatherDisplay = (weather) => {
       windSpeedIcon,
       "Wind",
       `${weather.windSpeed} km/h`,
+      weather.windDirection,
     ),
   );
   currentData.appendChild(
