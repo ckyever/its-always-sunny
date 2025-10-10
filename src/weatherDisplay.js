@@ -86,25 +86,25 @@ function getIcon(iconType) {
 }
 
 function createConditionsDataElement(icon, label, value) {
-  const data = document.createElement("div");
-  data.classList = "data-container";
-  const dataImage = document.createElement("img");
-  dataImage.classList = "icon";
-  dataImage.src = icon;
-  data.appendChild(dataImage);
-  const dataText = document.createElement("div");
-  dataText.classList = "data-text";
-  const dataLabel = document.createElement("span");
-  dataLabel.classList = "label";
-  dataLabel.innerText = label;
-  dataText.appendChild(dataLabel);
-  const dataValue = document.createElement("span");
-  dataValue.classList = "value";
-  dataValue.innerText = value;
-  dataText.appendChild(dataValue);
-  data.appendChild(dataText);
+  const conditionsData = document.createElement("div");
+  conditionsData.classList = "data-container";
+  const conditionsDataImage = document.createElement("img");
+  conditionsDataImage.classList = "icon";
+  conditionsDataImage.src = icon;
+  conditionsData.appendChild(conditionsDataImage);
+  const conditionsDataText = document.createElement("div");
+  conditionsDataText.classList = "data-text";
+  const conditionsDataLabel = document.createElement("span");
+  conditionsDataLabel.classList = "label";
+  conditionsDataLabel.innerText = label;
+  conditionsDataText.appendChild(conditionsDataLabel);
+  const conditionsDataValue = document.createElement("span");
+  conditionsDataValue.classList = "value";
+  conditionsDataValue.innerText = value;
+  conditionsDataText.appendChild(conditionsDataValue);
+  conditionsData.appendChild(conditionsDataText);
 
-  return data;
+  return conditionsData;
 }
 
 export const generateWeatherDisplay = (weather) => {
