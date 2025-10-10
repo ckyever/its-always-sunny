@@ -77,6 +77,15 @@ h6 {
 }
 /* End of CSS Reset */
 
+:root {
+  --main-text-color: #000000;
+  --secondary-text-color: #6d6d6d;
+}
+
+body {
+  font-family: "Roboto";
+}
+
 .container {
   display: flex;
   flex-direction: column;
@@ -109,6 +118,8 @@ h6 {
 .weather-container .location {
   grid-column: span 2;
   text-align: center;
+  font-weight: 500;
+  font-size: 2rem;
 }
 
 .weather-summary {
@@ -116,6 +127,11 @@ h6 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+}
+
+.weather-summary .condition-text {
+  font-size: 1.2rem;
+  color: var(--secondary-text-color);
 }
 
 .main-summary {
@@ -130,6 +146,14 @@ h6 {
 
 .weather-summary .current-temperature {
   font-size: 4rem;
+  font-weight: 700;
+}
+
+.weather-summary .feels-like-temperature,
+.weather-summary .temperature-range {
+  font-size: 1.2rem;
+  color: var(--secondary-text-color);
+  margin: 2px;
 }
 
 .current-data {
@@ -153,6 +177,15 @@ h6 {
   flex-direction: column;
 }
 
+.data-text .label {
+  color: var(--secondary-text-color);
+}
+
+.data-text .value {
+  font-size: 1.2rem;
+  font-weight: 500;
+}
+
 .hourly-container {
   display: flex;
   justify-content: space-around;
@@ -163,4 +196,19 @@ h6 {
   display: flex;
   flex-direction: column;
   align-items: center;
+  gap: 4px;
+}
+
+.hourly-data .temperature {
+  color: var(--secondary-text-color);
+  font-weight: 500;
+}
+
+.hourly-data .precipitation {
+  color: var(--secondary-text-color);
+}
+
+.hourly-data .hour {
+  margin: 4px;
+  font-weight: 500;
 }

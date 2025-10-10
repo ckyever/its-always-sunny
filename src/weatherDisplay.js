@@ -118,7 +118,7 @@ function createHourlyDataElement(
 
   const temperatureElement = document.createElement("span");
   temperatureElement.classList = "temperature";
-  temperatureElement.innerText = temperature;
+  temperatureElement.innerText = `${temperature}°`;
   hourlyData.appendChild(temperatureElement);
 
   const iconElement = document.createElement("img");
@@ -152,7 +152,7 @@ export const generateWeatherDisplay = (weather) => {
   weatherSummary.classList = "weather-summary";
 
   const currentConditionsText = document.createElement("span");
-  currentConditionsText.classList = "text";
+  currentConditionsText.classList = "condition-text";
   currentConditionsText.textContent = weather.conditions;
   weatherSummary.appendChild(currentConditionsText);
 

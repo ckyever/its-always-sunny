@@ -6,7 +6,7 @@ const queryInput = document.querySelector("form.search > input.query");
 const contentContainer = document.querySelector("body div.content");
 
 // Default weather shown
-search("Everest, Nepal");
+search("Melbourne");
 
 searchForm.addEventListener("submit", (event) => {
   event.preventDefault();
