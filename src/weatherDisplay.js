@@ -107,6 +107,38 @@ function createConditionsDataElement(icon, label, value) {
   return conditionsData;
 }
 
+function createHourlyDataElement(
+  temperature,
+  iconType,
+  precipitation,
+  datetime,
+) {
+  const hourlyData = document.createElement("div");
+  hourlyData.classList = "hourly-data";
+
+  const temperatureElement = document.createElement("span");
+  temperatureElement.classList = "temperature";
+  temperatureElement.innerText = temperature;
+  hourlyData.appendChild(temperatureElement);
+
+  const iconElement = document.createElement("img");
+  iconElement.classList = "icon";
+  iconElement.src = getIcon(iconType);
+  hourlyData.appendChild(iconElement);
+
+  const precipitationElement = document.createElement("span");
+  precipitationElement.classList = "precipitation";
+  precipitationElement.innerText = `${precipitation}%`;
+  hourlyData.appendChild(precipitationElement);
+
+  const hourElement = document.createElement("span");
+  hourElement.classList = "hour";
+  hourElement.innerText = datetime;
+  hourlyData.appendChild(hourElement);
+
+  return hourlyData;
+}
+
 export const generateWeatherDisplay = (weather) => {
   const weatherContainer = document.createElement("div");
   weatherContainer.classList = "weather-container";
@@ -185,6 +217,21 @@ export const generateWeatherDisplay = (weather) => {
     createConditionsDataElement(uvIndexIcon, "UV Index", weather.uvIndex),
   );
   weatherContainer.append(currentData);
+
+  const hourlyContainer = document.createElement("div");
+  hourlyContainer.classList = "hourly-container";
+
+  weather.hourly.forEach((data) => {
+    hourlyContainer.appendChild(
+      createHourlyDataElement(
+        data.temperature,
+        data.icon,
+        data.precipitation,
+        data.datetime,
+      ),
+    );
+  });
+  weatherContainer.append(hourlyContainer);
 
   return weatherContainer;
 };
