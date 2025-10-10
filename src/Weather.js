@@ -15,6 +15,7 @@ export class Weather {
   #sunrise;
   #sunset;
   #uvIndex;
+  #hourly;
 
   constructor({
     location = null,
@@ -33,6 +34,7 @@ export class Weather {
     sunrise = null,
     sunset = null,
     uvIndex = null,
+    hourly = {},
   } = {}) {
     this.#location = location;
     this.#weatherDescription = weatherDescription;
@@ -50,6 +52,7 @@ export class Weather {
     this.#sunrise = sunrise;
     this.#sunset = sunset;
     this.#uvIndex = uvIndex;
+    this.#hourly = hourly;
   }
 
   get location() {
@@ -109,5 +112,35 @@ export class Weather {
   }
   get uvIndex() {
     return this.#uvIndex;
+  }
+}
+
+export class HourlyWeather {
+  #datetime;
+  #temperature;
+  #precipitation;
+  #icon;
+
+  constructor(datetime, temperature, precipitation, icon) {
+    this.#datetime = datetime;
+    this.#temperature = temperature;
+    this.#precipitation = precipitation;
+    this.#icon = icon;
+  }
+
+  get datetime() {
+    return this.#datetime;
+  }
+
+  get temperature() {
+    return this.#temperature;
+  }
+
+  get precipitation() {
+    return this.#precipitation;
+  }
+
+  get icon() {
+    return this.#icon;
   }
 }
