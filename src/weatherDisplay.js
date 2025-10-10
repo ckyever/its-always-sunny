@@ -148,28 +148,25 @@ export const generateWeatherDisplay = (weather) => {
   location.textContent = titleCase(weather.location);
   weatherContainer.appendChild(location);
 
-  const firstRow = document.createElement("div");
-  firstRow.classList = "row";
-
   const weatherSummary = document.createElement("div");
   weatherSummary.classList = "weather-summary";
 
-  const currentConditions = document.createElement("div");
-  currentConditions.classList = "current-conditions";
-  const currentConditionsIcon = document.createElement("img");
-  currentConditionsIcon.src = getIcon(weather.icon);
-  currentConditionsIcon.classList = "weather-icon";
-  currentConditions.appendChild(currentConditionsIcon);
   const currentConditionsText = document.createElement("span");
   currentConditionsText.classList = "text";
   currentConditionsText.textContent = weather.conditions;
-  currentConditions.appendChild(currentConditionsText);
-  weatherSummary.appendChild(currentConditions);
+  weatherSummary.appendChild(currentConditionsText);
 
+  const mainSummary = document.createElement("div");
+  mainSummary.classList = "main-summary";
+  const currentConditionsIcon = document.createElement("img");
+  currentConditionsIcon.src = getIcon(weather.icon);
+  currentConditionsIcon.classList = "weather-icon";
+  mainSummary.appendChild(currentConditionsIcon);
   const currentTemperature = document.createElement("span");
   currentTemperature.classList = "current-temperature";
   currentTemperature.textContent = `${Math.floor(weather.currentTemperature)}°`;
-  weatherSummary.appendChild(currentTemperature);
+  mainSummary.appendChild(currentTemperature);
+  weatherSummary.appendChild(mainSummary);
 
   const feelsLikeTemperature = document.createElement("span");
   feelsLikeTemperature.classList = "feels-like-temperature";
@@ -181,8 +178,7 @@ export const generateWeatherDisplay = (weather) => {
   temperatureRange.textContent = `High ${Math.floor(weather.maxTemperature)}° - Low ${Math.floor(weather.minTemperature)}°`;
   weatherSummary.appendChild(temperatureRange);
 
-  firstRow.appendChild(weatherSummary);
-  weatherContainer.appendChild(firstRow);
+  weatherContainer.appendChild(weatherSummary);
 
   const currentData = document.createElement("div");
   currentData.classList = "current-data";

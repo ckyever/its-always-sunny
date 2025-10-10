@@ -106,13 +106,6 @@ h6 {
   gap: 24px;
 }
 
-.weather-container .row {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  gap: 8px;
-}
-
 .weather-container .location {
   grid-column: span 2;
   text-align: center;
@@ -123,22 +116,20 @@ h6 {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  gap: 8px;
 }
 
-.current-conditions {
+.main-summary {
   display: flex;
   align-items: center;
-  margin-bottom: -16px;
   gap: 8px;
 }
 
-.current-conditions .weather-icon {
-  width: 80px;
+.main-summary .weather-icon {
+  width: 100px;
 }
 
 .weather-summary .current-temperature {
-  font-size: 3rem;
+  font-size: 4rem;
 }
 
 .current-data {
