@@ -85,6 +85,28 @@ function getIcon(iconType) {
   return icon;
 }
 
+function createConditionsDataElement(icon, label, value) {
+  const data = document.createElement("div");
+  data.classList = "data-container";
+  const dataImage = document.createElement("img");
+  dataImage.classList = "icon";
+  dataImage.src = icon;
+  data.appendChild(dataImage);
+  const dataText = document.createElement("div");
+  dataText.classList = "data-text";
+  const dataLabel = document.createElement("span");
+  dataLabel.classList = "label";
+  dataLabel.innerText = label;
+  dataText.appendChild(dataLabel);
+  const dataValue = document.createElement("span");
+  dataValue.classList = "value";
+  dataValue.innerText = value;
+  dataText.appendChild(dataValue);
+  data.appendChild(dataText);
+
+  return data;
+}
+
 export const generateWeatherDisplay = (weather) => {
   const weatherContainer = document.createElement("div");
   weatherContainer.classList = "weather-container";
@@ -132,121 +154,36 @@ export const generateWeatherDisplay = (weather) => {
 
   const currentData = document.createElement("div");
   currentData.classList = "current-data";
-
-  const precipitation = document.createElement("div");
-  precipitation.classList = "data-container";
-  const precipitationImage = document.createElement("img");
-  precipitationImage.classList = "icon";
-  precipitationImage.src = precipitationIcon;
-  precipitation.appendChild(precipitationImage);
-  const precipitationText = document.createElement("div");
-  precipitationText.classList = "data-text";
-  const precipitationLabel = document.createElement("span");
-  precipitationLabel.classList = "label";
-  precipitationLabel.innerText = "Precipitation";
-  precipitationText.appendChild(precipitationLabel);
-  const precipitationValue = document.createElement("span");
-  precipitationValue.classList = "value";
-  precipitationValue.innerText = `${weather.precipitationAmount}%`;
-  precipitationText.appendChild(precipitationValue);
-  precipitation.appendChild(precipitationText);
-  currentData.appendChild(precipitation);
-
-  const windSpeed = document.createElement("div");
-  windSpeed.classList = "data-container";
-  const windSpeedImage = document.createElement("img");
-  windSpeedImage.classList = "icon";
-  windSpeedImage.src = windSpeedIcon;
-  windSpeed.appendChild(windSpeedImage);
-  const windSpeedText = document.createElement("div");
-  windSpeedText.classList = "data-text";
-  const windSpeedLabel = document.createElement("span");
-  windSpeedLabel.classList = "label";
-  windSpeedLabel.innerText = "Wind";
-  windSpeedText.appendChild(windSpeedLabel);
-  const windSpeedValue = document.createElement("span");
-  windSpeedValue.classList = "value";
-  windSpeedValue.innerText = `${weather.windSpeed} km/h`;
-  windSpeedText.appendChild(windSpeedValue);
-  windSpeed.appendChild(windSpeedText);
-  currentData.appendChild(windSpeed);
-
-  const humidity = document.createElement("div");
-  humidity.classList = "data-container";
-  const humidityImage = document.createElement("img");
-  humidityImage.classList = "icon";
-  humidityImage.src = humidityIcon;
-  humidity.appendChild(humidityImage);
-  const humidityText = document.createElement("div");
-  humidityText.classList = "data-text";
-  const humidityLabel = document.createElement("span");
-  humidityLabel.classList = "label";
-  humidityLabel.innerText = "Humidity";
-  humidityText.appendChild(humidityLabel);
-  const humidityValue = document.createElement("span");
-  humidityValue.classList = "value";
-  humidityValue.innerText = `${weather.humidity}%`;
-  humidityText.appendChild(humidityValue);
-  humidity.appendChild(humidityText);
-  currentData.appendChild(humidity);
-
-  const sunrise = document.createElement("div");
-  sunrise.classList = "data-container";
-  const sunriseImage = document.createElement("img");
-  sunriseImage.classList = "icon";
-  sunriseImage.src = sunriseIcon;
-  sunrise.appendChild(sunriseImage);
-  const sunriseText = document.createElement("div");
-  sunriseText.classList = "data-text";
-  const sunriseLabel = document.createElement("span");
-  sunriseLabel.classList = "label";
-  sunriseLabel.innerText = "Sunrise";
-  sunriseText.appendChild(sunriseLabel);
-  const sunriseValue = document.createElement("span");
-  sunriseValue.classList = "value";
-  sunriseValue.innerText = weather.sunrise;
-  sunriseText.appendChild(sunriseValue);
-  sunrise.appendChild(sunriseText);
-  currentData.appendChild(sunrise);
-
-  const sunset = document.createElement("div");
-  sunset.classList = "data-container";
-  const sunsetImage = document.createElement("img");
-  sunsetImage.classList = "icon";
-  sunsetImage.src = sunsetIcon;
-  sunset.appendChild(sunsetImage);
-  const sunsetText = document.createElement("div");
-  sunsetText.classList = "data-text";
-  const sunsetLabel = document.createElement("span");
-  sunsetLabel.classList = "label";
-  sunsetLabel.innerText = "Sunset";
-  sunsetText.appendChild(sunsetLabel);
-  const sunsetValue = document.createElement("span");
-  sunsetValue.classList = "value";
-  sunsetValue.innerText = weather.sunset;
-  sunsetText.appendChild(sunsetValue);
-  sunset.appendChild(sunsetText);
-  currentData.appendChild(sunset);
-
-  const uvIndex = document.createElement("div");
-  uvIndex.classList = "data-container";
-  const uvIndexImage = document.createElement("img");
-  uvIndexImage.classList = "icon";
-  uvIndexImage.src = uvIndexIcon;
-  uvIndex.appendChild(uvIndexImage);
-  const uvIndexText = document.createElement("div");
-  uvIndexText.classList = "data-text";
-  const uvIndexLabel = document.createElement("span");
-  uvIndexLabel.classList = "label";
-  uvIndexLabel.innerText = "UV Index";
-  uvIndexText.appendChild(uvIndexLabel);
-  const uvIndexValue = document.createElement("span");
-  uvIndexValue.classList = "value";
-  uvIndexValue.innerText = weather.uvIndex;
-  uvIndexText.appendChild(uvIndexValue);
-  uvIndex.appendChild(uvIndexText);
-  currentData.appendChild(uvIndex);
-
+  currentData.appendChild(
+    createConditionsDataElement(
+      precipitationIcon,
+      "Precipitation",
+      `${weather.precipitationAmount}%`,
+    ),
+  );
+  currentData.appendChild(
+    createConditionsDataElement(
+      windSpeedIcon,
+      "Wind",
+      `${weather.windSpeed} km/h`,
+    ),
+  );
+  currentData.appendChild(
+    createConditionsDataElement(
+      humidityIcon,
+      "Humidity",
+      `${weather.humidity}%`,
+    ),
+  );
+  currentData.appendChild(
+    createConditionsDataElement(sunriseIcon, "Sunrise", weather.sunrise),
+  );
+  currentData.appendChild(
+    createConditionsDataElement(sunsetIcon, "Sunset", weather.sunset),
+  );
+  currentData.appendChild(
+    createConditionsDataElement(uvIndexIcon, "UV Index", weather.uvIndex),
+  );
   weatherContainer.append(currentData);
 
   return weatherContainer;
