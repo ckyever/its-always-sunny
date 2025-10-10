@@ -94,8 +94,11 @@ body {
 }
 
 .query {
+  background: url(./assets/magnify.svg) no-repeat 8px center;
+  background-size: 32px 32px;
+  width: 500px;
   margin: 16px;
-  padding: 8px 16px;
+  padding: 8px 16px 8px 50px;
   border: none;
   border-radius: 16px;
   box-shadow: 1px 1px 8px rgba(0, 0, 0, 0.3);
