@@ -128,7 +128,11 @@ function createHourlyDataElement(
 
   const precipitationElement = document.createElement("span");
   precipitationElement.classList = "precipitation";
-  precipitationElement.innerText = `${Math.floor(precipitation)}%`;
+  if (precipitation == 0) {
+    precipitationElement.innerText = "";
+  } else {
+    precipitationElement.innerText = `${Math.floor(precipitation)}%`;
+  }
   hourlyData.appendChild(precipitationElement);
 
   const hourElement = document.createElement("span");
