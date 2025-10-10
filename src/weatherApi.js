@@ -24,6 +24,12 @@ class WeatherApi {
       precipitationAmount: data.days[0].precip,
       precipitationProbability: data.days[0].precipprob,
       icon: data.currentConditions.icon,
+      windSpeed: data.currentConditions.windspeed,
+      windDirection: data.currentConditions.winddir,
+      humidity: data.currentConditions.humidity,
+      sunrise: data.currentConditions.sunrise,
+      sunset: data.currentConditions.sunset,
+      uvIndex: data.currentConditions.uvindex,
     });
   }
 

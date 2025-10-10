@@ -9,6 +9,12 @@ export class Weather {
   #precipitationAmount;
   #precipitationProbability;
   #icon;
+  #windSpeed;
+  #windDirection;
+  #humidity;
+  #sunrise;
+  #sunset;
+  #uvIndex;
 
   constructor({
     location = null,
@@ -21,6 +27,12 @@ export class Weather {
     precipitationAmount = null,
     precipitationProbability = null,
     icon = null,
+    windSpeed = null,
+    windDirection = null,
+    humidity = null,
+    sunrise = null,
+    sunset = null,
+    uvIndex = null,
   } = {}) {
     this.#location = location;
     this.#weatherDescription = weatherDescription;
@@ -32,6 +44,12 @@ export class Weather {
     this.#precipitationAmount = precipitationAmount;
     this.#precipitationProbability = precipitationProbability;
     this.#icon = icon;
+    this.#windSpeed = windSpeed;
+    this.#windDirection = windDirection;
+    this.#humidity = humidity;
+    this.#sunrise = sunrise;
+    this.#sunset = sunset;
+    this.#uvIndex = uvIndex;
   }
 
   get location() {
@@ -72,5 +90,24 @@ export class Weather {
 
   get icon() {
     return this.#icon;
+  }
+
+  get windSpeed() {
+    return this.#windSpeed;
+  }
+  get windDirection() {
+    return this.#windDirection;
+  }
+  get humidity() {
+    return this.#humidity;
+  }
+  get sunrise() {
+    return this.#sunrise;
+  }
+  get sunset() {
+    return this.#sunset;
+  }
+  get uvIndex() {
+    return this.#uvIndex;
   }
 }

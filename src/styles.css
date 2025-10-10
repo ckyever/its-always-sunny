@@ -142,3 +142,24 @@ h6 {
 .weather-summary .current-temperature {
   font-size: 3rem;
 }
+
+.current-data {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  justify-items: start;
+}
+
+.icon {
+  width: 60px;
+}
+
+.data-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.data-text {
+  display: flex;
+  flex-direction: column;
+}
