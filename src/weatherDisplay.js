@@ -153,8 +153,7 @@ export const generateWeatherDisplay = (weather) => {
 
   const currentConditionsText = document.createElement("span");
   currentConditionsText.classList = "text";
-  currentConditionsText.textContent =
-    weather.conditions === "Clear" ? "Sunny" : weather.conditions;
+  currentConditionsText.textContent = weather.conditions;
   weatherSummary.appendChild(currentConditionsText);
 
   const mainSummary = document.createElement("div");
