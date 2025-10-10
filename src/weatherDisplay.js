@@ -128,7 +128,7 @@ function createHourlyDataElement(
 
   const precipitationElement = document.createElement("span");
   precipitationElement.classList = "precipitation";
-  precipitationElement.innerText = `${precipitation}%`;
+  precipitationElement.innerText = `${Math.floor(precipitation)}%`;
   hourlyData.appendChild(precipitationElement);
 
   const hourElement = document.createElement("span");
@@ -204,7 +204,7 @@ export const generateWeatherDisplay = (weather) => {
     createConditionsDataElement(
       humidityIcon,
       "Humidity",
-      `${weather.humidity}%`,
+      `${Math.floor(weather.humidity)}%`,
     ),
   );
   currentData.appendChild(
@@ -224,9 +224,9 @@ export const generateWeatherDisplay = (weather) => {
   weather.hourly.forEach((data) => {
     hourlyContainer.appendChild(
       createHourlyDataElement(
-        data.temperature,
+        Math.floor(data.temperature),
         data.icon,
-        data.precipitation,
+        Math.floor(data.precipitation),
         data.datetime,
       ),
     );
