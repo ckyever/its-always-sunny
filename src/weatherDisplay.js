@@ -1,4 +1,4 @@
-import { titleCase } from "./utility.js";
+import { titleCase, getShort12HourTime } from "./utility.js";
 
 // Weather icons
 import snowIcon from "./assets/snow.svg";
@@ -133,7 +133,7 @@ function createHourlyDataElement(
 
   const hourElement = document.createElement("span");
   hourElement.classList = "hour";
-  hourElement.innerText = datetime;
+  hourElement.innerText = getShort12HourTime(datetime, false);
   hourlyData.appendChild(hourElement);
 
   return hourlyData;
@@ -208,10 +208,18 @@ export const generateWeatherDisplay = (weather) => {
     ),
   );
   currentData.appendChild(
-    createConditionsDataElement(sunriseIcon, "Sunrise", weather.sunrise),
+    createConditionsDataElement(
+      sunriseIcon,
+      "Sunrise",
+      getShort12HourTime(weather.sunrise, true),
+    ),
   );
   currentData.appendChild(
-    createConditionsDataElement(sunsetIcon, "Sunset", weather.sunset),
+    createConditionsDataElement(
+      sunsetIcon,
+      "Sunset",
+      getShort12HourTime(weather.sunset, true),
+    ),
   );
   currentData.appendChild(
     createConditionsDataElement(uvIndexIcon, "UV Index", weather.uvIndex),
