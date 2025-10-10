@@ -190,7 +190,7 @@ export const generateWeatherDisplay = (weather) => {
     createConditionsDataElement(
       precipitationIcon,
       "Precipitation",
-      `${weather.precipitationAmount}%`,
+      `${Math.floor(weather.precipitationAmount)}%`,
     ),
   );
   currentData.appendChild(
