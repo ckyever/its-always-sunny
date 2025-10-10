@@ -162,28 +162,30 @@ body {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   justify-items: start;
+  gap: 4px;
 }
 
 .icon {
   width: 60px;
 }
 
-.data-container {
+.current-data .data-container {
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 8px;
 }
 
-.data-text {
+.current-data .data-text {
   display: flex;
   flex-direction: column;
 }
 
-.data-text .label {
+.current-data .data-text .label {
   color: var(--secondary-text-color);
 }
 
-.data-text .value {
+.current-data .data-text .value {
   font-size: 1.2rem;
   font-weight: 500;
 }
